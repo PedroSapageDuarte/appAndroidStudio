@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blackish"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+        <ImageButton
+            android:id="@+id/buttonDrawerToggle"
+            android:layout_width="58dp"
+            android:layout_height="63dp"
+            android:background="@android:color/transparent"
+            android:padding="5dp"
+            android:src="@drawable/round_menu_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:targetApi="s" />
+
+        <TextView
+            android:id="@+id/tvRetangulo"
+            android:layout_width="900dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/rectangle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLinha"
+            android:layout_width="900dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="163dp"
+            android:background="@drawable/line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--<ImageView
+            android:id="@+id/imageVelocimetro"
+            android:layout_width="304dp"
+            android:layout_height="225dp"
+            android:layout_marginBottom="135dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/velocimetro" />-->
+
+        <!-- <ImageView
+            android:id="@+id/pointerImg"
+            android:layout_width="46dp"
+            android:layout_height="90dp"
+            android:rotation="-135"
+            app:layout_constraintBottom_toBottomOf="@+id/imageVelocimetro"
+            app:layout_constraintEnd_toEndOf="@+id/imageVelocimetro"
+            app:layout_constraintHorizontal_bias="0.29"
+            app:layout_constraintStart_toStartOf="@+id/imageVelocimetro"
+            app:layout_constraintTop_toTopOf="@+id/imageVelocimetro"
+            app:layout_constraintVertical_bias="0.96"
+            app:srcCompat="@drawable/pointer" /> -->
+
+        <com.github.anastr.speedviewlib.ImageSpeedometer
+            android:id="@+id/speedometer"
+            android:layout_width="wrap_content"
+            android:layout_height="240dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:sv_image="@drawable/vel"
+            app:sv_indicator="KiteIndicator"
+            app:sv_indicatorColor="#AA3333"
+            app:sv_maxSpeed="220"
+            app:sv_speedTextSize="23dp"
+            app:sv_unit="km/h"
+            app:sv_withTremble="false"
+            app:sv_indicatorWidth="5dp" />
+
+        <ImageButton
+            android:id="@+id/btnStop"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/stopbtn"
+            android:onClick="stopRecording"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.952" />
+
+        <ImageButton
+            android:id="@+id/btnStart"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="startRecording"
+            app:layout_constraintBottom_toBottomOf="@+id/btnStop"
+            app:layout_constraintEnd_toEndOf="@+id/tvRetangulo"
+            app:layout_constraintHorizontal_bias="0.774"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnStop"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/startbtn" />
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="178dp"
+            android:layout_height="82dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.77" />
+
+        <TextView
+            android:id="@+id/tvKmH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="km/h"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvRetangulo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.456" />
+
+        <TextView
+            android:id="@+id/tvSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.376" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

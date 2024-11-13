@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppDrawer</string>
+    <color name="blackish">#080808</color>
+    <color name="greyish">#3D3939</color>
+</resources>

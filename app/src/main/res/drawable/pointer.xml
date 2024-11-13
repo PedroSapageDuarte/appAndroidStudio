@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="75dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Triângulo isósceles com vértices arredondados, incluindo a base -->
+    <path
+        android:fillColor="#AA3333"
+        android:pathData="M50,10 Q52,8 54,10 L85,80 Q87,84 80,90 L20,90 Q13,84 15,80 Z"
+        android:strokeColor="#AA3333"
+        android:strokeWidth="1"/>
+</vector>
+

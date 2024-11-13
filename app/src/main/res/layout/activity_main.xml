@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blackish"
+    tools:openDrawer="start"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <include
+        layout="@layout/activity_main_content" />
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="600dp"
+        android:layout_height="match_parent"
+        app:menu="@menu/drawer_items"
+        android:layout_gravity="start">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvAccelerometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:text="Accelerometer"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.104"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.147" />
+
+            <TextView
+                android:id="@+id/tvContainerAccel"
+                android:layout_width="145dp"
+                android:layout_height="90dp"
+                android:background="@drawable/container"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvAccelerometer"
+                app:layout_constraintHorizontal_bias="0.419"
+                app:layout_constraintStart_toStartOf="@+id/tvAccelerometer"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.346" />
+
+            <TextView
+                android:id="@+id/tvGyroscope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gyroscope"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.667"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.147" />
+
+            <TextView
+                android:id="@+id/tvContainerGyro"
+                android:layout_width="145dp"
+                android:layout_height="90dp"
+                android:background="@drawable/container"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerAccel"
+                app:layout_constraintEnd_toEndOf="@+id/tvGyroscope"
+                app:layout_constraintStart_toStartOf="@+id/tvGyroscope"
+                app:layout_constraintTop_toTopOf="@+id/tvContainerAccel" />
+
+            <TextView
+                android:id="@+id/tvAHRS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AHRS"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvAccelerometer"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="@+id/tvAccelerometer"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.605" />
+
+            <TextView
+                android:id="@+id/tvContainerAHRS"
+                android:layout_width="145dp"
+                android:layout_height="90dp"
+                android:background="@drawable/container"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvAHRS"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="@+id/tvAHRS"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.875" />
+
+            <TextView
+                android:id="@+id/tvGPS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPS"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/tvGyroscope"
+                app:layout_constraintHorizontal_bias="0.500"
+                app:layout_constraintStart_toStartOf="@+id/tvGyroscope"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.605" />
+
+            <TextView
+                android:id="@+id/tvContainerGPS"
+                android:layout_width="145dp"
+                android:layout_height="90dp"
+                android:background="@drawable/container"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerAHRS"
+                app:layout_constraintEnd_toEndOf="@+id/tvGPS"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="@+id/tvGPS"
+                app:layout_constraintTop_toTopOf="@+id/tvContainerAHRS"
+                app:layout_constraintVertical_bias="0.878" />
+
+            <ImageButton
+                android:id="@+id/buttonDrawerClose"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.97"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.06999999"
+                app:srcCompat="@drawable/round_close_24" />
+
+            <TextView
+                android:id="@+id/tvAccelX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="X:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerAccel"
+                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerAccel"
+                app:layout_constraintTop_toTopOf="@+id/tvContainerAccel" />
+
+            <TextView
+                android:id="@+id/tvAccelY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Y:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerAccel"
+                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerAccel"
+                app:layout_constraintTop_toBottomOf="@+id/tvAccelX" />
+
+            <TextView
+                android:id="@+id/tvAccelZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Z:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerAccel"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerAccel"
+                app:layout_constraintHorizontal_bias="0.045"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerAccel"
+                app:layout_constraintTop_toBottomOf="@+id/tvAccelY"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvGyroX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="X:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerGyro"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerGyro"
+                app:layout_constraintTop_toTopOf="@+id/tvContainerGyro" />
+
+            <TextView
+                android:id="@+id/tvGyroY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Y:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerGyro"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerGyro"
+                app:layout_constraintTop_toBottomOf="@+id/tvGyroX" />
+
+            <TextView
+                android:id="@+id/tvGyroZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Z:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerGyro"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerGyro"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerGyro"
+                app:layout_constraintTop_toBottomOf="@+id/tvGyroY" />
+
+            <TextView
+                android:id="@+id/tvAHRSpitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Pitch:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerAHRS"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerAHRS"
+                app:layout_constraintTop_toTopOf="@+id/tvContainerAHRS" />
+
+            <TextView
+                android:id="@+id/tvAHRSroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Roll:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerAHRS"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerAHRS"
+                app:layout_constraintTop_toBottomOf="@+id/tvAHRSpitch" />
+
+            <TextView
+                android:id="@+id/tvAHRSyaw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Yaw:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerAHRS"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerAHRS"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerAHRS"
+                app:layout_constraintTop_toBottomOf="@+id/tvAHRSroll" />
+
+            <TextView
+                android:id="@+id/tvGPSlat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Latitude:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerGPS"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerGPS"
+                app:layout_constraintTop_toTopOf="@+id/tvContainerGPS" />
+
+            <TextView
+                android:id="@+id/tvGPSlong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longitude:"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerGPS"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerGPS"
+                app:layout_constraintHorizontal_bias="0.04"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerGPS"
+                app:layout_constraintTop_toBottomOf="@+id/tvGPSlat"
+                app:layout_constraintVertical_bias="0.514" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
